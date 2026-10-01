@@ -41,7 +41,7 @@
     }
 
     .logo{
-      font-size:clamp(1.8rem, 2.5vw, 3rem);
+      font-size:clamp(1.9rem, 2.6vw, 3.1rem);
       letter-spacing:1px;
       font-weight:900;
       text-transform:uppercase;
@@ -73,9 +73,7 @@
       transition:0.2s ease;
     }
 
-    nav a:hover{
-      background:var(--red);
-    }
+    nav a:hover{ background:var(--red); }
 
     .ticker{
       background:var(--gold);
@@ -117,22 +115,9 @@
       border:1px solid rgba(0,0,0,.04);
     }
 
-    .hero-image{
-      position:relative;
-      overflow:hidden;
-      height:360px;
-      background:#ddd;
-    }
-
-    .hero-image img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-    }
-
-    .hero-content{
-      padding:20px 22px 18px;
-    }
+    .hero-image{ position:relative; overflow:hidden; height:360px; background:#ddd; }
+    .hero-image img{ width:100%; height:100%; object-fit:cover; }
+    .hero-content{ padding:20px 22px 18px; }
 
     .meta{
       font-size:0.78rem;
@@ -148,11 +133,7 @@
       line-height:1.25;
     }
 
-    .hero p{
-      margin:0;
-      color:#4b4b4b;
-      font-size:1.02rem;
-    }
+    .hero p{ margin:0; color:#4b4b4b; font-size:1.02rem; }
 
     .content-grid{
       display:grid;
@@ -176,12 +157,7 @@
       font-size:1.6rem;
     }
 
-    .news-list{
-      display:flex;
-      flex-direction:column;
-      gap:16px;
-    }
-
+    .news-list{ display:flex; flex-direction:column; gap:16px; }
     .news-item{
       display:flex;
       gap:14px;
@@ -189,10 +165,7 @@
       border-bottom:1px solid var(--line);
     }
 
-    .news-item:last-child{
-      border-bottom:none;
-    }
-
+    .news-item:last-child{ border-bottom:none; }
     .news-item img{
       width:170px;
       height:110px;
@@ -202,18 +175,8 @@
       flex-shrink:0;
     }
 
-    .news-item h3{
-      margin:0 0 8px;
-      font-size:1.1rem;
-      line-height:1.4;
-    }
-
-    .news-item p{
-      margin:0;
-      font-size:0.94rem;
-      color:#555;
-    }
-
+    .news-item h3{ margin:0 0 8px; font-size:1.1rem; line-height:1.4; }
+    .news-item p{ margin:0; font-size:0.94rem; color:#555; }
     .post-meta{
       margin-top:10px;
       color:#7a7a7a;
@@ -221,12 +184,7 @@
       font-weight:700;
     }
 
-    .side-stack{
-      display:flex;
-      flex-direction:column;
-      gap:18px;
-    }
-
+    .side-stack{ display:flex; flex-direction:column; gap:18px; }
     .side-box{
       background:var(--card);
       border-radius:16px;
@@ -242,10 +200,7 @@
       font-size:1.3rem;
     }
 
-    .side-box p{
-      margin:0 0 12px;
-      color:#4e4e4e;
-    }
+    .side-box p{ margin:0 0 12px; color:#4e4e4e; }
 
     .social-links a{
       display:block;
@@ -258,10 +213,7 @@
       transition:transform .15s ease;
     }
 
-    .social-links a:hover{
-      transform:translateY(-1px);
-    }
-
+    .social-links a:hover{ transform:translateY(-1px); }
     .yt{background:#e50914}
     .fb{background:#1877f2}
     .ig{background:#c13584}
@@ -276,25 +228,16 @@
       font-weight:700;
     }
 
-    .mini-list{
-      list-style:none;
-      padding:0;
-      margin:0;
-    }
-
+    .mini-list{ list-style:none; padding:0; margin:0; }
     .mini-list li{
       padding:10px 0;
       border-bottom:1px solid var(--line);
       font-weight:600;
       color:#2a2a2a;
     }
+    .mini-list li:last-child{ border-bottom:none; }
 
-    .mini-list li:last-child{border-bottom:none}
-
-    .section-block{
-      margin-top:18px;
-    }
-
+    .section-block{ margin-top:18px; }
     .category-grid{
       display:grid;
       grid-template-columns:repeat(3,1fr);
@@ -317,21 +260,9 @@
       background:#ddd;
     }
 
-    .category-card .content{
-      padding:14px 14px 16px;
-    }
-
-    .category-card h4{
-      margin:0 0 8px;
-      font-size:1.05rem;
-      line-height:1.5;
-    }
-
-    .category-card p{
-      margin:0;
-      color:#555;
-      font-size:0.92rem;
-    }
+    .category-card .content{ padding:14px 14px 16px; }
+    .category-card h4{ margin:0 0 8px; font-size:1.05rem; line-height:1.5; }
+    .category-card p{ margin:0; color:#555; font-size:0.92rem; }
 
     footer{
       background:#111;
@@ -348,46 +279,20 @@
       margin-bottom:8px;
     }
 
-    footer p{
-      margin:0;
-      color:#d5d5d5;
-      font-size:0.9rem;
-    }
+    footer p{ margin:0; color:#d5d5d5; font-size:0.9rem; }
 
     @media (max-width: 900px){
-      .content-grid{
-        grid-template-columns:1fr;
-      }
-      .category-grid{
-        grid-template-columns:1fr 1fr;
-      }
+      .content-grid{ grid-template-columns:1fr; }
+      .category-grid{ grid-template-columns:1fr 1fr; }
     }
 
     @media (max-width: 700px){
-      .hero-image{
-        height:240px;
-      }
-
-      .news-item{
-        flex-direction:column;
-      }
-
-      .news-item img{
-        width:100%;
-        height:200px;
-      }
-
-      .category-grid{
-        grid-template-columns:1fr;
-      }
-
-      .logo{
-        font-size:1.85rem;
-      }
-
-      .panel h2, .side-box h3{
-        font-size:1.25rem;
-      }
+      .hero-image{ height:240px; }
+      .news-item{ flex-direction:column; }
+      .news-item img{ width:100%; height:200px; }
+      .category-grid{ grid-template-columns:1fr; }
+      .logo{ font-size:1.85rem; }
+      .panel h2, .side-box h3{ font-size:1.25rem; }
     }
   </style>
 </head>
@@ -410,7 +315,7 @@
 
   <div class="ticker">
     <div class="ticker-label">🔴 BREAKING</div>
-    <div class="ticker-text">आपकी खबर यहाँ दिखाई जाएगी — नीचे दिए HTML में अपनी समाचार जानकारी बदलें।</div>
+    <div class="ticker-text">देश, समाज और जनहित से जुड़ी ताज़ा खबरें यहाँ लगातार अपडेट होंगी।</div>
   </div>
 
   <main class="container" id="home">
@@ -421,7 +326,7 @@
       <div class="hero-content">
         <div class="meta">Satlok Samachar • आज की प्रमुख खबर</div>
         <h1>सच की आवाज़ के साथ पढ़िए देश, समाज और जनहित से जुड़ी प्रमुख खबरें</h1>
-        <p>यह आपकी मुख्य खबर का स्थान है। यहाँ अपनी खबर का शीर्षक, फोटो और पूरी जानकारी डालें। यह सेक्शन राष्ट्रीय, सामाजिक, राजनीतिक और विकास-केंद्रित समाचारों के लिए सबसे उपयुक्त है।</p>
+        <p>Satlok Samachar आपके लिए सही, तेज़ और विश्वसनीय खबरें लेकर आता है। यहाँ राष्ट्रीय, सामाजिक, राजनीतिक और विकास से जुड़ी घटनाओं को सटीकता के साथ प्रस्तुत किया जाता है।</p>
       </div>
     </section>
 
@@ -432,8 +337,8 @@
           <article class="news-item">
             <img src="https://images.unsplash.com/photo-1586339949916-3e9457bef6d3?auto=format&fit=crop&w=500&q=80" alt="Latest news" />
             <div>
-              <h3>आपकी पहली न्यूज़ हेडलाइन यहाँ लिखें</h3>
-              <p>यहाँ खबर का छोटा विवरण लिखें। अपनी रिपोर्ट, फोटो, तथ्य और प्रभाव को इस अनुभाग में सही तरीके से प्रस्तुत करें।</p>
+              <h3>आज की प्रमुख खबर: सामाजिक, राजनीतिक और विकास से जुड़ी अपडेट्स</h3>
+              <p>देश की मुख्य घटनाओं, जनहित की समस्याओं और सामाजिक बदलावों पर ताज़ा रिपोर्टिंग यहाँ दी जाएगी।</p>
               <div class="post-meta">आज • Satlok Samachar</div>
             </div>
           </article>
@@ -441,8 +346,8 @@
           <article class="news-item">
             <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=500&q=80" alt="Maharashtra news" />
             <div>
-              <h3>महाराष्ट्र की नई खबर यहाँ प्रकाशित करें</h3>
-              <p>खबर से जुड़ी महत्वपूर्ण जानकारी, तथ्य, स्थान और समय को यहाँ लिखें ताकि पाठक तुरंत समझ सकें।</p>
+              <h3>महाराष्ट्र की महत्वपूर्ण खबरें और स्थानीय अपडेट्स</h3>
+              <p>राज्य स्तर की राजनीति, विकास परियोजनाओं, कानून और समाज से जुड़ी घटनाओं की जानकारी यहाँ शामिल की जाएगी।</p>
               <div class="post-meta">आज • महाराष्ट्र</div>
             </div>
           </article>
@@ -450,8 +355,8 @@
           <article class="news-item">
             <img src="https://images.unsplash.com/photo-1495020689067-958852a7765e?auto=format&fit=crop&w=500&q=80" alt="Social news" />
             <div>
-              <h3>समाज और जनहित की खबर</h3>
-              <p>लोक कल्याण, समाज, शिक्षा, स्वास्थ्य, न्याय और विकास से जुड़े समाचारों को यहाँ लिखें।</p>
+              <h3>समाज और जनहित की खबरें</h3>
+              <p>शिक्षा, स्वास्थ्य, रोजगार, न्याय, महिला सुरक्षा और नागरिक मुद्दों पर सटीक खबरें और विश्लेषण उपलब्ध होगा।</p>
               <div class="post-meta">आज • जनहित</div>
             </div>
           </article>
@@ -459,8 +364,8 @@
           <article class="news-item">
             <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=500&q=80" alt="National update" />
             <div>
-              <h3>राष्ट्रीय समाचारों की प्रमुख अपडेट्स यहाँ रखें</h3>
-              <p>देशभर की घटनाओं, नीतियों, निर्णयों और विकास से जुड़े समाचारों को यहीं अपडेट करें।</p>
+              <h3>राष्ट्रीय समाचारों की प्रमुख अपडेट्स</h3>
+              <p>सरकारी निर्णय, राष्ट्रीय कार्यक्रम, सामाजिक सुधार और देशभर की प्रमुख घटनाओं पर रिपोर्टिंग को यहाँ रखा जाएगा।</p>
               <div class="post-meta">आज • राष्ट्रीय</div>
             </div>
           </article>
@@ -470,7 +375,7 @@
       <aside class="side-stack">
         <div class="side-box" id="video">
           <h3>📺 वीडियो न्यूज़</h3>
-          <p>YouTube पर हमारा चैनल देखें और समाचारों को वीडियो रूप में समझें।</p>
+          <p>हमारा वीडियो समाचार देखें और देश-समाज से जुड़ी खबरों को सरल और प्रभावी तरीके से समझें।</p>
           <div class="social-links">
             <a class="yt" href="#" target="_blank" rel="noreferrer">▶ YouTube Channel</a>
           </div>
@@ -496,7 +401,7 @@
 
         <div class="side-box" id="contact">
           <h3>📧 संपर्क</h3>
-          <p>अपना Gmail, फोन नंबर या संपर्क ईमेल यहाँ लिखें:</p>
+          <p>अपना ईमेल, फोन नंबर या सोशल मीडिया संपर्क यहाँ जोड़ें:</p>
           <a class="mail" href="mailto:yourmail@gmail.com">yourmail@gmail.com</a>
         </div>
       </aside>
@@ -509,7 +414,7 @@
           <img src="https://images.unsplash.com/photo-1521295121783-8a321d551ad2?auto=format&fit=crop&w=800&q=80" alt="National news 1" />
           <div class="content">
             <h4>देश की प्रमुख खबरें और सरकारी निर्णय</h4>
-            <p>राष्ट्रीय नीतियों, विकास योजनाओं और सामाजिक घटनाओं की सही रिपोर्ट यहाँ लिखें।</p>
+            <p>राष्ट्रीय विकास, नीतियाँ, योजनाएँ और जनहित से जुड़े निर्णयों की रिपोर्ट यहाँ लिखें।</p>
           </div>
         </article>
 
@@ -517,7 +422,7 @@
           <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=800&q=80" alt="State news" />
           <div class="content">
             <h4>महाराष्ट्र से जुड़े समाचार और अपडेट्स</h4>
-            <p>राज्य की खबरें, घटनाएँ और सामाजिक मुद्दे यहाँ प्रस्तुत करें।</p>
+            <p>राज्य सरकार, स्थानीय घटनाएँ, सामाजिक मुद्दे और विकास परियोजनाओं पर अपडेट यहाँ रखें।</p>
           </div>
         </article>
 
@@ -525,7 +430,7 @@
           <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=800&q=80" alt="Politics news" />
           <div class="content">
             <h4>राजनीति, चुनाव और जनप्रतिनिधित्व</h4>
-            <p>चुनाव, नीतियां और राजनीतिक घटनाओं पर स्पष्ट एवं निष्पक्ष रिपोर्टिंग लिखें।</p>
+            <p>चुनाव, नीतियाँ, नेता, सार्वजनिक नीति और राजनीतिक घटनाओं पर स्पष्ट रिपोर्टिंग लिखें।</p>
           </div>
         </article>
       </div>

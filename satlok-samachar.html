@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Satlok Samachar | Sach Ki Aawaz</title>
+  <meta name="description" content="Satlok Samachar - Sach Ki Aawaz: देश, समाज, महाराष्ट्र और जनहित से जुड़ी समाचारें।" />
+  <style>
+    :root{
+      --red:#c1121f;
+      --red-dark:#8d0f1a;
+      --black:#111;
+      --text:#1d1d1d;
+      --muted:#666;
+      --light:#f4f4f4;
+      --card:#fff;
+      --line:#e7e7e7;
+      --gold:#f5c542;
+      --shadow:0 8px 22px rgba(0,0,0,.08);
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+      background:#f3f3f3;
+      color:var(--text);
+      line-height:1.5;
+    }
+
+    a{text-decoration:none;color:inherit}
+    img{max-width:100%;display:block}
+
+    header{
+      background:linear-gradient(135deg, var(--red-dark), var(--red));
+      color:#fff;
+      padding:18px 14px 14px;
+      text-align:center;
+      border-bottom:3px solid #7d0d14;
+    }
+
+    .logo{
+      font-size:clamp(1.8rem, 2.5vw, 3rem);
+      letter-spacing:1px;
+      font-weight:900;
+      text-transform:uppercase;
+    }
+
+    .tag{
+      font-size:0.95rem;
+      margin-top:6px;
+      opacity:0.96;
+      letter-spacing:0.5px;
+    }
+
+    nav{
+      background:#111;
+      position:sticky;
+      top:0;
+      z-index:20;
+      overflow:auto;
+      white-space:nowrap;
+      box-shadow:0 2px 8px rgba(0,0,0,.15);
+    }
+
+    nav a{
+      display:inline-block;
+      color:#fff;
+      font-weight:700;
+      font-size:0.95rem;
+      padding:14px 18px;
+      transition:0.2s ease;
+    }
+
+    nav a:hover{
+      background:var(--red);
+    }
+
+    .ticker{
+      background:var(--gold);
+      color:#111;
+      font-weight:800;
+      padding:10px 14px;
+      display:flex;
+      align-items:center;
+      gap:12px;
+      overflow:hidden;
+      border-bottom:1px solid rgba(0,0,0,.12);
+    }
+
+    .ticker-label{
+      color:#a30000;
+      font-weight:900;
+      letter-spacing:0.4px;
+      flex-shrink:0;
+    }
+
+    .ticker-text{
+      overflow:hidden;
+      white-space:nowrap;
+      text-overflow:ellipsis;
+    }
+
+    .container{
+      max-width:1180px;
+      margin:18px auto 0;
+      padding:0 16px 30px;
+    }
+
+    .hero{
+      background:var(--card);
+      border-radius:16px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+      margin-bottom:22px;
+      border:1px solid rgba(0,0,0,.04);
+    }
+
+    .hero-image{
+      position:relative;
+      overflow:hidden;
+      height:360px;
+      background:#ddd;
+    }
+
+    .hero-image img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    .hero-content{
+      padding:20px 22px 18px;
+    }
+
+    .meta{
+      font-size:0.78rem;
+      color:var(--muted);
+      letter-spacing:0.6px;
+      text-transform:uppercase;
+      font-weight:700;
+    }
+
+    .hero h1{
+      margin:12px 0 10px;
+      font-size:clamp(1.7rem, 2.4vw, 2.7rem);
+      line-height:1.25;
+    }
+
+    .hero p{
+      margin:0;
+      color:#4b4b4b;
+      font-size:1.02rem;
+    }
+
+    .content-grid{
+      display:grid;
+      grid-template-columns:2fr 1fr;
+      gap:22px;
+    }
+
+    .panel{
+      background:var(--card);
+      border-radius:16px;
+      padding:18px 18px 10px;
+      box-shadow:var(--shadow);
+      margin-bottom:20px;
+      border:1px solid rgba(0,0,0,.03);
+    }
+
+    .panel h2{
+      margin:0 0 18px;
+      padding-left:12px;
+      border-left:5px solid var(--red);
+      font-size:1.6rem;
+    }
+
+    .news-list{
+      display:flex;
+      flex-direction:column;
+      gap:16px;
+    }
+
+    .news-item{
+      display:flex;
+      gap:14px;
+      padding:10px 0;
+      border-bottom:1px solid var(--line);
+    }
+
+    .news-item:last-child{
+      border-bottom:none;
+    }
+
+    .news-item img{
+      width:170px;
+      height:110px;
+      object-fit:cover;
+      border-radius:10px;
+      background:#ddd;
+      flex-shrink:0;
+    }
+
+    .news-item h3{
+      margin:0 0 8px;
+      font-size:1.1rem;
+      line-height:1.4;
+    }
+
+    .news-item p{
+      margin:0;
+      font-size:0.94rem;
+      color:#555;
+    }
+
+    .post-meta{
+      margin-top:10px;
+      color:#7a7a7a;
+      font-size:0.8rem;
+      font-weight:700;
+    }
+
+    .side-stack{
+      display:flex;
+      flex-direction:column;
+      gap:18px;
+    }
+
+    .side-box{
+      background:var(--card);
+      border-radius:16px;
+      padding:18px 18px 12px;
+      box-shadow:var(--shadow);
+      border:1px solid rgba(0,0,0,.03);
+    }
+
+    .side-box h3{
+      margin:0 0 14px;
+      padding-left:12px;
+      border-left:5px solid var(--red);
+      font-size:1.3rem;
+    }
+
+    .side-box p{
+      margin:0 0 12px;
+      color:#4e4e4e;
+    }
+
+    .social-links a{
+      display:block;
+      padding:12px 14px;
+      text-align:center;
+      border-radius:10px;
+      color:#fff;
+      font-weight:800;
+      margin:10px 0;
+      transition:transform .15s ease;
+    }
+
+    .social-links a:hover{
+      transform:translateY(-1px);
+    }
+
+    .yt{background:#e50914}
+    .fb{background:#1877f2}
+    .ig{background:#c13584}
+    .mail{
+      background:#444;
+      display:inline-block;
+      width:100%;
+      text-align:center;
+      padding:12px 10px;
+      border-radius:10px;
+      color:#fff;
+      font-weight:700;
+    }
+
+    .mini-list{
+      list-style:none;
+      padding:0;
+      margin:0;
+    }
+
+    .mini-list li{
+      padding:10px 0;
+      border-bottom:1px solid var(--line);
+      font-weight:600;
+      color:#2a2a2a;
+    }
+
+    .mini-list li:last-child{border-bottom:none}
+
+    .section-block{
+      margin-top:18px;
+    }
+
+    .category-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+      margin-top:16px;
+    }
+
+    .category-card{
+      background:#fff;
+      border-radius:14px;
+      box-shadow:var(--shadow);
+      overflow:hidden;
+      border:1px solid rgba(0,0,0,.04);
+    }
+
+    .category-card img{
+      width:100%;
+      height:170px;
+      object-fit:cover;
+      background:#ddd;
+    }
+
+    .category-card .content{
+      padding:14px 14px 16px;
+    }
+
+    .category-card h4{
+      margin:0 0 8px;
+      font-size:1.05rem;
+      line-height:1.5;
+    }
+
+    .category-card p{
+      margin:0;
+      color:#555;
+      font-size:0.92rem;
+    }
+
+    footer{
+      background:#111;
+      color:#fff;
+      text-align:center;
+      padding:28px 16px 18px;
+      margin-top:30px;
+    }
+
+    footer strong{
+      display:block;
+      font-size:1.1rem;
+      letter-spacing:0.4px;
+      margin-bottom:8px;
+    }
+
+    footer p{
+      margin:0;
+      color:#d5d5d5;
+      font-size:0.9rem;
+    }
+
+    @media (max-width: 900px){
+      .content-grid{
+        grid-template-columns:1fr;
+      }
+      .category-grid{
+        grid-template-columns:1fr 1fr;
+      }
+    }
+
+    @media (max-width: 700px){
+      .hero-image{
+        height:240px;
+      }
+
+      .news-item{
+        flex-direction:column;
+      }
+
+      .news-item img{
+        width:100%;
+        height:200px;
+      }
+
+      .category-grid{
+        grid-template-columns:1fr;
+      }
+
+      .logo{
+        font-size:1.85rem;
+      }
+
+      .panel h2, .side-box h3{
+        font-size:1.25rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">Satlok Samachar</div>
+    <div class="tag">SACH KI AAWAZ • सत्य और जनहित की खबरें</div>
+  </header>
+
+  <nav>
+    <a href="#home">होम</a>
+    <a href="#latest">ताज़ा खबरें</a>
+    <a href="#national">राष्ट्रीय</a>
+    <a href="#state">महाराष्ट्र</a>
+    <a href="#politics">राजनीति</a>
+    <a href="#video">वीडियो न्यूज़</a>
+    <a href="#contact">संपर्क</a>
+  </nav>
+
+  <div class="ticker">
+    <div class="ticker-label">🔴 BREAKING</div>
+    <div class="ticker-text">आपकी खबर यहाँ दिखाई जाएगी — नीचे दिए HTML में अपनी समाचार जानकारी बदलें।</div>
+  </div>
+
+  <main class="container" id="home">
+    <section class="hero">
+      <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=1400&q=80" alt="Satlok Samachar news cover" />
+      </div>
+      <div class="hero-content">
+        <div class="meta">Satlok Samachar • आज की प्रमुख खबर</div>
+        <h1>सच की आवाज़ के साथ पढ़िए देश, समाज और जनहित से जुड़ी प्रमुख खबरें</h1>
+        <p>यह आपकी मुख्य खबर का स्थान है। यहाँ अपनी खबर का शीर्षक, फोटो और पूरी जानकारी डालें। यह सेक्शन राष्ट्रीय, सामाजिक, राजनीतिक और विकास-केंद्रित समाचारों के लिए सबसे उपयुक्त है।</p>
+      </div>
+    </section>
+
+    <div class="content-grid">
+      <section class="panel" id="latest">
+        <h2>📰 ताज़ा खबरें</h2>
+        <div class="news-list">
+          <article class="news-item">
+            <img src="https://images.unsplash.com/photo-1586339949916-3e9457bef6d3?auto=format&fit=crop&w=500&q=80" alt="Latest news" />
+            <div>
+              <h3>आपकी पहली न्यूज़ हेडलाइन यहाँ लिखें</h3>
+              <p>यहाँ खबर का छोटा विवरण लिखें। अपनी रिपोर्ट, फोटो, तथ्य और प्रभाव को इस अनुभाग में सही तरीके से प्रस्तुत करें।</p>
+              <div class="post-meta">आज • Satlok Samachar</div>
+            </div>
+          </article>
+
+          <article class="news-item">
+            <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=500&q=80" alt="Maharashtra news" />
+            <div>
+              <h3>महाराष्ट्र की नई खबर यहाँ प्रकाशित करें</h3>
+              <p>खबर से जुड़ी महत्वपूर्ण जानकारी, तथ्य, स्थान और समय को यहाँ लिखें ताकि पाठक तुरंत समझ सकें।</p>
+              <div class="post-meta">आज • महाराष्ट्र</div>
+            </div>
+          </article>
+
+          <article class="news-item">
+            <img src="https://images.unsplash.com/photo-1495020689067-958852a7765e?auto=format&fit=crop&w=500&q=80" alt="Social news" />
+            <div>
+              <h3>समाज और जनहित की खबर</h3>
+              <p>लोक कल्याण, समाज, शिक्षा, स्वास्थ्य, न्याय और विकास से जुड़े समाचारों को यहाँ लिखें।</p>
+              <div class="post-meta">आज • जनहित</div>
+            </div>
+          </article>
+
+          <article class="news-item">
+            <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=500&q=80" alt="National update" />
+            <div>
+              <h3>राष्ट्रीय समाचारों की प्रमुख अपडेट्स यहाँ रखें</h3>
+              <p>देशभर की घटनाओं, नीतियों, निर्णयों और विकास से जुड़े समाचारों को यहीं अपडेट करें।</p>
+              <div class="post-meta">आज • राष्ट्रीय</div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <aside class="side-stack">
+        <div class="side-box" id="video">
+          <h3>📺 वीडियो न्यूज़</h3>
+          <p>YouTube पर हमारा चैनल देखें और समाचारों को वीडियो रूप में समझें।</p>
+          <div class="social-links">
+            <a class="yt" href="#" target="_blank" rel="noreferrer">▶ YouTube Channel</a>
+          </div>
+        </div>
+
+        <div class="side-box">
+          <h3>📱 सोशल मीडिया</h3>
+          <div class="social-links">
+            <a class="fb" href="#" target="_blank" rel="noreferrer">Facebook</a>
+            <a class="ig" href="#" target="_blank" rel="noreferrer">Instagram</a>
+          </div>
+        </div>
+
+        <div class="side-box">
+          <h3>🔥 ट्रेंडिंग</h3>
+          <ul class="mini-list">
+            <li>राष्ट्रीय समाचार</li>
+            <li>महाराष्ट्र अपडेट्स</li>
+            <li>जनहित खबरें</li>
+            <li>राजनीति और समाज</li>
+          </ul>
+        </div>
+
+        <div class="side-box" id="contact">
+          <h3>📧 संपर्क</h3>
+          <p>अपना Gmail, फोन नंबर या संपर्क ईमेल यहाँ लिखें:</p>
+          <a class="mail" href="mailto:yourmail@gmail.com">yourmail@gmail.com</a>
+        </div>
+      </aside>
+    </div>
+
+    <section class="panel section-block" id="national">
+      <h2>🏛️ राष्ट्रीय समाचार</h2>
+      <div class="category-grid">
+        <article class="category-card">
+          <img src="https://images.unsplash.com/photo-1521295121783-8a321d551ad2?auto=format&fit=crop&w=800&q=80" alt="National news 1" />
+          <div class="content">
+            <h4>देश की प्रमुख खबरें और सरकारी निर्णय</h4>
+            <p>राष्ट्रीय नीतियों, विकास योजनाओं और सामाजिक घटनाओं की सही रिपोर्ट यहाँ लिखें।</p>
+          </div>
+        </article>
+
+        <article class="category-card" id="state">
+          <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=800&q=80" alt="State news" />
+          <div class="content">
+            <h4>महाराष्ट्र से जुड़े समाचार और अपडेट्स</h4>
+            <p>राज्य की खबरें, घटनाएँ और सामाजिक मुद्दे यहाँ प्रस्तुत करें।</p>
+          </div>
+        </article>
+
+        <article class="category-card" id="politics">
+          <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=800&q=80" alt="Politics news" />
+          <div class="content">
+            <h4>राजनीति, चुनाव और जनप्रतिनिधित्व</h4>
+            <p>चुनाव, नीतियां और राजनीतिक घटनाओं पर स्पष्ट एवं निष्पक्ष रिपोर्टिंग लिखें।</p>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <strong>SATLOK SAMACHAR – SACH KI AAWAZ</strong>
+    <p>© 2026 Satlok Samachar. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
